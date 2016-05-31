@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="EpicList1.AddTask"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EpicList1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="5">
+            <TextBlock Text="Adicionar Task" FontSize="40"></TextBlock>
+            <TextBox PlaceholderText="Titulo" x:Name="txtTitulo" Margin="5" MaxLength="20"/>
+            <AutoSuggestBox PlaceholderText="Categoria" x:Name="boxCategoria"  Margin="5"></AutoSuggestBox>
+            <TextBox PlaceholderText="Descrição" x:Name="txtDescricao" Margin="5" MaxLength="500"/>
+            <TextBox PlaceholderText="URL da Image" x:Name="txtUrl" Margin="5" />
+            <TextBox PlaceholderText="E-mail" x:Name="txtEmail" Margin="5" MaxLength="100" />
+            <DatePicker HorizontalAlignment="Stretch"  x:Name="dtData" Margin="5"></DatePicker>
+            <StackPanel Orientation="Horizontal" >
+                <Button Content="Voltar" x:Name="btVoltar" Margin="5" Click="btVoltar_Click" FontSize="20"></Button>
+                <Button Content="Compartilhar" x:Name="btCompartilhar" Margin="5" Click="btCompartilhar_Click" FontSize="20"></Button>
+                <Button Content="Foto" x:Name="btFoto" Margin="5" Click="btFoto_Click" FontSize="20"></Button>
+                <Button Content="Salvar" x:Name="btSalvar" Margin="5" Click="btSalvar_Click" FontSize="20"></Button>
+            </StackPanel>
+            <Image x:Name="imgCamera" Height="100" Width="100"></Image>
+        </StackPanel>
+    </Grid>
+</Page>

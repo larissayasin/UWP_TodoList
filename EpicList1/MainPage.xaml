@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="EpicList1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EpicList1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="5">
+            <TextBlock Text="Epic List" FontSize="40" />
+            <ProgressBar Minimum="0" Margin="0,5,0,0" Maximum="100" Value="75" Name="pbTask"  />
+            <StackPanel Orientation="Horizontal">
+                <Button Content="ADICIONAR TASK" Margin="0,5,0,5" x:Name="bTAdd" Click="bTAdd_Click" />
+                <ComboBox x:Name="cbCategorias" SelectionChanged="cbCategorias_SelectionChanged" HorizontalAlignment="Right" Margin="0,5,0,5" />
+            </StackPanel>
+            <!--<Image Source="http://4.bp.blogspot.com/-B_oSb2JsgiI/TqRbArCTvkI/AAAAAAAAAUM/K7u4ye6fd6U/s1600/Windows_7_Rejected_Artwork_03.jpg"></Image>-->
+            <ListView x:Name="MyListView" HorizontalAlignment="Stretch" SelectionChanged="MyListView_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" >
+                            <Ellipse Height="50" Width="50" Margin="4">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="{Binding ImagemURL}" Stretch="UniformToFill" />
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Título:" Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,4,0"></TextBlock>
+                                    <TextBlock Text="{Binding Titulo}" Width="400" FontWeight="Bold"  TextTrimming="CharacterEllipsis" Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Descrição:"  Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,4,0"></TextBlock>
+                                    <TextBlock Text="{Binding Descricao}" Width="400" FontWeight="Bold"  TextTrimming="CharacterEllipsis" Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Categoria:"  Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,4,0"></TextBlock>
+                                    <TextBlock Text="{Binding Categorias}" Width="400" FontWeight="Bold"  TextTrimming="CharacterEllipsis" Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Data:"  Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,4,0"></TextBlock>
+                                    <TextBlock Text="{Binding Data}" Width="400" FontWeight="Bold"  TextTrimming="CharacterEllipsis" Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                                <!--<Image Source="{Binding Imagem}" Width="100" Height="100"></Image>-->
+                                <!--<Button Content="FEITO" x:Name="btDone" Click="btDone_Click" Background="LightBlue" ></Button>
+                            <Button Content="APAGAR" x:Name="btDelete" Click="btDelete_Click" Background="LightSalmon" ></Button>-->
+                            </StackPanel>
+                            <Button x:Name="btFeito" Content="FEITO" Background="Blue" Margin="4,0,4,0"  VerticalAlignment="Center" Click="btFeito_Click" HorizontalAlignment="Right"></Button>
+                            <Button x:Name="btApagar" Content="APAGAR" Background="Red"  Margin="4,0,4,0"  VerticalAlignment="Center" Click="btApagar_Click" HorizontalAlignment="Right"></Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>
